@@ -38,7 +38,7 @@ namespace ServiceA
 			loggerFactory.AddDebug();
 
 			app.UseMvc();
-			app.Map("/", builder =>
+			app.Map("/test", builder =>
 			{
 				builder.Run(async ctx =>
 				{
