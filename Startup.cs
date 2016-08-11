@@ -37,7 +37,10 @@ namespace ServiceA
 			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 			loggerFactory.AddDebug();
 
-			app.UseMvc();
+			app.UseMvc(opt =>
+			{
+				opt.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+			});
 		}
 	}
 }
